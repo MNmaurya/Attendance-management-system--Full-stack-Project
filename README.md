@@ -10,7 +10,7 @@ A Full-Stack Attendance Management System developed using **Python Flask**, **My
 - Add new students
 - View student records
 - Store student details securely in MySQL
-
+  
 ### 📚 Subject Management
 - Add subjects
 - View subject list
