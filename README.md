@@ -137,7 +137,8 @@ http://127.0.0.1:5000
 
 ## Attendance Percentage
 
-![Uploading image.png…]()
+<img width="499" height="320" alt="image" src="https://github.com/user-attachments/assets/0152a777-e429-44b0-b2d1-80be344a54b4" />
+
 
 ---
 
