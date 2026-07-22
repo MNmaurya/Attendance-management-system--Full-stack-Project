@@ -6,7 +6,7 @@ A Full-Stack Attendance Management System developed using **Python Flask**, **My
 ## 📌 Features
 
 ### 👨‍🎓 Student Management
-- Add new students
+- Add new students 
 - View student records
 - Store student details securely in MySQL
   
