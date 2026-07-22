@@ -1,4 +1,4 @@
-
+# 🎓 Attendance Management System
 A Full-Stack Attendance Management System developed using **Python Flask**, **MySQL**, **HTML**, **CSS**, and **Bootstrap**. The application helps educational institutions efficiently manage students, subjects, attendance records, and attendance reports through a user-friendly web interface.
 
 ---
@@ -131,12 +131,13 @@ http://127.0.0.1:5000
 
 <img width="955" height="418" alt="image" src="https://github.com/user-attachments/assets/d7fefb70-ef5f-4c80-9b90-0cdb41b2cb8a" />
 
+<img width="950" height="436" alt="image" src="https://github.com/user-attachments/assets/2fc02220-eb0d-4379-a757-d0d45ff32e71" />
 
 ---
 
 ## Attendance Percentage
 
-(Add Screenshot)
+![Uploading image.png…]()
 
 ---
 
