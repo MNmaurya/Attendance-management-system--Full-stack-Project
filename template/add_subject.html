@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add Subject</title>
+    <style>
+        body {font-family:'Segoe UI'; background:linear-gradient(135deg,#c9d6ff,#e2e2e2); margin:0;}
+        .navbar {background:#2d6cdf; padding:15px 40px; color:white; display:flex; justify-content:space-between;}
+        .nav-btn {background:white; color:#2d6cdf; padding:8px 14px; border-radius:8px; text-decoration:none; font-weight:bold;}
+        .container {display:flex; justify-content:center; margin-top:60px;}
+        .card {background:#dbe7ff; padding:30px; border-radius:20px; width:400px; box-shadow:0 15px 40px rgba(0,0,0,0.15);}
+        h2 {text-align:center; margin-bottom:20px;}
+        input {width:100%; padding:10px; margin:10px 0; border-radius:8px; border:none;}
+        button {width:100%; padding:12px; background:#2d6cdf; color:white; border:none; border-radius:8px; font-weight:bold;}
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <div>Smart Attendance</div>
+        <a href="/" class="nav-btn">Dashboard</a>
+    </div>
+    <div class="container">
+        <div class="card">
+            <h2>Add Subject</h2>
+            <form action="/subjects/add" method="POST">
+                <input type="text" name="subject_name" placeholder="Subject Name" required>
+                <button type="submit">Add Subject</button>
+            </form>
+
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+{% block content %}
+
+<style>
+
+
+.page-card {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+    margin-top: 30px;
+}
+
+.page-title {
+    color: #1e3a8a;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.table thead {
+    background: #2563eb;
+    color: white;
+}
+</style>
+
+<div class="container">
+    <div class="page-card">
+        <h2 class="page-title">📚 Subjects List</h2>
+
+        <table class="table table-bordered table-hover">
+            <thead>
+                <tr>
+                    <th>Subject ID</th>
+                    <th>Subject Name</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for subject in subjects %}
+                <tr>
+                    <td>{{ subject.subject_id }}</td>
+                    <td>{{ subject.subject_name }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+    </div>
+</div>
+
+{% endblock %}

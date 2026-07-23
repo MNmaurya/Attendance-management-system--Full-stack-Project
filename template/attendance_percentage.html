@@ -1,0 +1,154 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<style>
+/* ===== NAVBAR PROFESSIONAL STYLE ===== */
+.navbar {
+    background: linear-gradient(90deg, #0f172a, #1e293b) !important;
+    padding: 12px 25px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+.navbar a {
+    color: #e2e8f0 !important;
+    font-weight: 500;
+    margin-right: 18px;
+    transition: 0.3s ease;
+}
+
+.navbar a:hover {
+    color: #38bdf8 !important;
+    text-decoration: none;
+}
+
+.navbar .navbar-brand {
+    font-weight: 700;
+    color: white !important;
+    letter-spacing: 0.5px;
+}
+
+.navbar-text {
+    color: #cbd5e1 !important;
+    margin-right: 15px;
+    font-weight: 500;
+}
+
+/* ===== PAGE STYLING ===== */
+.page-container {
+    max-width: 600px;
+    margin: 40px auto;
+    background: white;
+    padding: 30px 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+}
+
+.page-title {
+    text-align: center;
+    color: #1e3a8a;
+    font-weight: 700;
+    margin-bottom: 25px;
+}
+
+label {
+    font-weight: 600;
+    color: #1e3a8a;
+}
+
+select {
+    width: 100%;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #cbd5e1;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    background-color: #f8fafc;
+}
+
+select:focus {
+    outline: none;
+    border-color: #2563eb;
+    box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.2);
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    background: linear-gradient(90deg, #2563eb, #1d4ed8);
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+button:hover {
+    background: linear-gradient(90deg, #1d4ed8, #1e40af);
+}
+
+.result-box {
+    margin-top: 20px;
+    padding: 15px;
+    background: #eff6ff;
+    border-left: 5px solid #2563eb;
+    border-radius: 8px;
+    font-weight: 600;
+    color: #1e3a8a;
+}
+</style>
+
+<div class="page-container">
+    <h2 class="page-title">Attendance Percentage Calculator</h2>
+
+    <form method="POST">
+
+        <label>Student:</label>
+        <select name="student_id" required>
+            {% for student in students %}
+                <option value="{{ student.student_id }}">
+                    {{ student.name }}
+                </option>
+            {% endfor %}
+        </select>
+
+        <label>Subject:</label>
+        <select name="subject_id" required>
+            {% for subject in subjects %}
+                <option value="{{ subject.subject_id }}">
+                    {{ subject.subject_name }}
+                </option>
+            {% endfor %}
+        </select>
+
+        <button type="submit">Calculate</button>
+
+    </form>
+
+    {% if percentage is not none %}
+        <div class="result-box">
+            Attendance Percentage: {{ percentage }}%
+        </div>
+    {% endif %}
+</div>
+
+{% endblock %}
+
+{% if percentage is not none %}
+    <div style="margin-top:20px; padding:15px; background:#e0f2fe; border-radius:8px;">
+        <h3 style="color:#1e3a8a;">Attendance Percentage: {{ percentage }}%</h3>
+    </div>
+{% endif %}
+
+
+{% if summary %}
+<div style="margin-top:30px; padding:20px; background:white; border-radius:12px; box-shadow:0 5px 15px rgba(0,0,0,0.08);">
+    <h3 style="color:#1e3a8a;">📊 Overall Attendance Summary</h3>
+    <p><strong>Total Records:</strong> {{ summary.total }}</p>
+    <p style="color:green;"><strong>Present:</strong> {{ summary.present }} ({{ summary.present_percent }}%)</p>
+    <p style="color:red;"><strong>Absent:</strong> {{ summary.absent }} ({{ summary.absent_percent }}%)</p>
+</div>
+{% endif %}
+

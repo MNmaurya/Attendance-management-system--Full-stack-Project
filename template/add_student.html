@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add Student</title>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+    <style>
+        body {font-family: 'Segoe UI'; background: linear-gradient(135deg,#c9d6ff,#e2e2e2); margin:0;}
+        .navbar {background:#2d6cdf; padding:15px 40px; color:white; display:flex; justify-content:space-between;}
+        .nav-btn {background:white; color:#2d6cdf; padding:8px 14px; border-radius:8px; text-decoration:none; font-weight:bold;}
+        .container {display:flex; justify-content:center; margin-top:60px;}
+        .card {background:#dbe7ff; padding:30px; border-radius:20px; width:400px; box-shadow:0 15px 40px rgba(0,0,0,0.15);}
+        h2 {text-align:center; margin-bottom:20px;}
+        input, select {width:100%; padding:10px; margin:10px 0; border-radius:8px; border:none;}
+        button {width:100%; padding:12px; background:#2d6cdf; color:white; border:none; border-radius:8px; font-weight:bold;}
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <div>Smart Attendance</div>
+        <a href="/" class="nav-btn">Dashboard</a>
+    </div>
+    <div class="container">
+        <div class="card">
+            <h2>Add Student</h2>
+            <form action="/students/add" method="POST">
+              <input type="text" name="name" placeholder="Student Name" required>
+              <input type="text" name="roll_no" placeholder="Roll Number" required>
+              <input type="text" name="class" placeholder="Class" required>
+              <button type="submit">Add Student</button>
+            </form>
+
+        </div>
+    </div>
+</body>
+</html>

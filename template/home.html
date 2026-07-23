@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dashboard - Smart Attendance</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Google Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #c9d6ff, #e2e2e2);
+            min-height: 100vh;
+        }
+
+        /* ===== NAVBAR ===== */
+        .navbar {
+            width: 100%;
+            background: #2d6cdf;
+            padding: 15px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: white;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        .navbar h2 {
+            font-size: 20px;
+            font-weight: 600;
+        }
+
+        .nav-right {
+            display: flex;
+            gap: 12px;
+            align-items: center;
+        }
+
+        .nav-btn {
+            text-decoration: none;
+            background: white;
+            color: #2d6cdf;
+            padding: 8px 14px;
+            border-radius: 8px;
+            font-weight: bold;
+            font-size: 14px;
+            transition: 0.3s;
+        }
+
+        .nav-btn:hover {
+            background: #e6ecff;
+        }
+
+        /* ===== MAIN CONTAINER ===== */
+        .main-wrapper {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 40px 20px;
+        }
+
+        .main-container {
+            background: #dbe7ff;
+            width: 100%;
+            max-width: 1100px;
+            padding: 40px 30px;
+            border-radius: 20px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+            text-align: center;
+        }
+
+        .main-container h1 {
+            margin-bottom: 10px;
+            color: #2d2d2d;
+            font-size: 32px;
+        }
+
+        .main-container p {
+            color: #444;
+            margin-bottom: 35px;
+            font-size: 16px;
+        }
+
+        /* ===== CARDS ===== */
+        .cards {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            flex-wrap: wrap;
+        }
+
+        .card {
+            background: #bcd3ff;
+            padding: 25px 20px;
+            width: 280px;
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 12px 25px rgba(0,0,0,0.2);
+        }
+
+        .icon {
+            font-size: 40px;
+            color: #1c2b4a;
+            margin-bottom: 10px;
+        }
+
+        .card h2 {
+            margin-bottom: 6px;
+            color: #1c2b4a;
+        }
+
+        .card p {
+            font-size: 14px;
+            margin-bottom: 15px;
+            color: #2f2f2f;
+        }
+
+        .btn {
+            display: block;
+            text-decoration: none;
+            margin: 6px 0;
+            padding: 10px;
+            border-radius: 8px;
+            font-weight: bold;
+            font-size: 14px;
+            transition: 0.3s;
+        }
+
+        .btn-primary {
+            background: #2d6cdf;
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: #1e4eb8;
+        }
+
+        .btn-secondary {
+            background: white;
+            color: #2d6cdf;
+            border: 2px solid #2d6cdf;
+        }
+
+        .btn-secondary:hover {
+            background: #2d6cdf;
+            color: white;
+        }
+
+        @media (max-width: 900px) {
+            .cards {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <div class="navbar">
+        <h2>Smart Attendance System</h2>
+        <div class="nav-right">
+            <!-- <a href="/bulk_attendance" class="nav-btn">Bulk Attendance</a> -->
+            <a href="/attendance_percentage" class="nav-btn">Attendance %</a>
+            <a href="/logout" class="nav-btn">Logout</a>
+        </div>
+    </div>
+
+    <!-- MAIN DASHBOARD -->
+    <div class="main-wrapper">
+        <div class="main-container">
+            <h1>Dashboard</h1>
+            <p>Welcome! Use the dashboard below to manage students, subjects, and attendance.</p>
+
+            <div class="cards">
+
+                <!-- STUDENTS -->
+                <div class="card">
+                    <span class="material-symbols-outlined icon">groups</span>
+                    <h2>STUDENTS</h2>
+                    <p>To add / view students</p>
+                    <a href="/add_student" class="btn btn-primary">ADD STUDENTS</a>
+                    <a href="/view_students" class="btn btn-secondary">VIEW STUDENTS</a>
+                </div>
+
+                <!-- SUBJECTS -->
+                <div class="card">
+                    <span class="material-symbols-outlined icon">menu_book</span>
+                    <h2>SUBJECTS</h2>
+                    <p>To add / view subjects</p>
+                    <a href="/add_subject" class="btn btn-primary">ADD SUBJECTS</a>
+                    <a href="/view_subjects" class="btn btn-secondary">VIEW SUBJECTS</a>
+                </div>
+
+                <!-- ATTENDANCE -->
+                <div class="card">
+                    <span class="material-symbols-outlined icon">fact_check</span>
+                    <h2>ATTENDANCE</h2>
+                    <p>To add / view attendance</p>
+                    <!-- <a href="/attendance" class="btn btn-primary">MARK ATTENDANCE</a> -->
+                    <a href="/bulk_attendance" class="btn btn-primary">MARK ATTENDANCE</a>
+                    <a href="/view_attendance" class="btn btn-secondary">VIEW ATTENDANCE</a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
